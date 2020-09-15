@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Vidly is an app built with React JS and an excerpt of Mosh React Course
 
 ## Available Scripts
 
