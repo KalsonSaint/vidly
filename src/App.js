@@ -1,13 +1,32 @@
-import React from "react";
-import "./App.css";
-import Movies from "./components/Movies";
+import React, { Component } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 
-const App = () => {
-  return (
-    <main className="container">
-      <Movies />
-    </main>
-  );
+import Navbar from "./components/Navbar";
+import Movies from "./components/Movies";
+import Customers from "./components/Customers";
+import Rentals from "./components/Rentals";
+import NotFound from "./components/NotFound";
+
+import "./App.css";
+
+class App extends Component{
+  render() {
+    return (
+      <React.Fragment>
+        <Navbar />
+        <main className="container">
+          <Switch>
+            <Route exact path="/movies" component={Movies} />
+            <Route path="/customers" component={Customers} />
+            <Route exact path="/rentals" component={Rentals} />
+            <Route path="/not-found" component={NotFound} />
+            <Redirect exact from="/" to="/movies" />
+            <Redirect to="/not-found" />
+          </Switch>
+        </main>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
